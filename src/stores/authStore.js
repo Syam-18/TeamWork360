@@ -15,5 +15,10 @@ export const useAuthStore = defineStore('auth', () => {
     user.value = null
     localStorage.removeItem('user')
   }
+  window.addEventListener('storage', (event) => {
+    if (event.key === 'user' && event.newValue === null) {
+      user.value = null
+    }
+  })
   return {user, login, logout}
 })

@@ -1,7 +1,7 @@
 import { api } from "./api";
 
-const getTasks = () => {
-  return api.get("/tasks")
+const getTasks = (projectId) => {
+  return api.get(`/tasks?projectId=${projectId}`)
 }
 
 const getTask = (id) => {
