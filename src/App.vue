@@ -1,7 +1,9 @@
 <script setup></script>
 
 <template>
-  <RouterView/>
+  <div class="bg-[hsl(0,0%,95%)] w-screen h-screen flex flex-col justify-center items-center">
+    <RouterView />
+  </div>
 </template>
 
 <style scoped></style>
