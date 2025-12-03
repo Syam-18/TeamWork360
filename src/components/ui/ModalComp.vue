@@ -1,4 +1,5 @@
 <script setup>
+import router from '@/router'
 import { addProject, deleteProject, updateProject } from '@/services/projectServices'
 import { useProjectStore } from '@/stores/projectStore'
 import { ref } from 'vue'
@@ -40,6 +41,7 @@ const removeProject = async () => {
   await deleteProject(props.project.id)
   projectStore.loadProjects()
   closeModal()
+  router.push('/projects')
 }
 </script>
 <template>

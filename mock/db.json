@@ -8,44 +8,32 @@
       "date": "2025-12-03"
     },
     {
-      "name": "Work247",
-      "description": "maybee\n",
-      "date": "2025-12-02",
-      "id": "a3d8"
-    },
-    {
       "id": "9e36",
       "name": "Todo",
       "description": "todos",
-      "date": "2025-12-02"
-    },
-    {
-      "id": "d59b",
-      "name": "Tada",
-      "description": "al;sfjd;l",
       "date": "2025-12-02"
     }
   ],
   "tasks": [
     {
-      "id": "3b48",
       "projectId": "b05d",
-      "title": "a",
+      "title": "Projects page",
       "description": "asl",
-      "assigne": ";als",
+      "assigne": "Frontend",
       "priority": "Medium",
-      "status": "Doing",
-      "date": "2025-12-02"
+      "status": "Done",
+      "date": "2025-12-02",
+      "id": "3b48"
     },
     {
-      "id": "18f2",
       "projectId": "b05d",
-      "title": "a",
+      "title": "Manage no of requests",
       "description": "al;sk",
-      "assigne": "la;skj",
+      "assigne": "Backend ",
       "priority": "Medium",
-      "status": "Todo",
-      "date": "2025-12-02"
+      "status": "Doing",
+      "date": "2025-12-02",
+      "id": "18f2"
     }
   ]
 }

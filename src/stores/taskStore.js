@@ -1,4 +1,4 @@
-import { getTasks } from '@/services/taskServices'
+import { deleteTask, getTasks } from '@/services/taskServices'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
@@ -8,5 +8,9 @@ export const useTaskStore = defineStore('taskstore', () => {
     const response = await getTasks(projectId)
     tasks.value = response.data
   }
-  return { tasks, loadTasks }
+  const removeTask = async (id, projectId) => {
+    await deleteTask(id)
+    loadTasks(projectId)
+  }
+  return { tasks, loadTasks, removeTask }
 })

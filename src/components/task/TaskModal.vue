@@ -20,7 +20,7 @@ const closeModal = () => {
 }
 
 const createTask = async () => {
-  if (title.value.trim() && description.value.trim()) {
+  if (title.value.trim() && description.value.trim() && assigne.value.trim()) {
     const data = {
       projectId: props.projectId,
       title: title.value,

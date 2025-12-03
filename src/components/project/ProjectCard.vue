@@ -22,7 +22,7 @@ const handleClose = () => {
     <p class="text-sm">{{ project.date }}</p>
     <div class="absolute bottom-0 left-0 h-1 bg-black" style="width: 100%"></div>
     <div
-      class="absolute top-2 right-2 p-2 rounded"
+      class="absolute top-2 right-2 p-2 rounded hover:bg-[hsl(0,0%,90%)]"
       @click.stop="openMenu"
     >
       <i class="fa-solid fa-ellipsis-vertical text-sm"></i>
