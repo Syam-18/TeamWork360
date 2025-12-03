@@ -22,12 +22,8 @@ const { tasks } = storeToRefs(taskStore)
 const { loadAllTasks } = taskStore
 
 onBeforeMount(() => {
-  if (!projects.value.length) {
     loadProjects()
-  }
-  if (!tasks.value.length) {
     loadAllTasks()
-  }
 })
 const createChart = () => {
   if (chartInstance) chartInstance.destroy()

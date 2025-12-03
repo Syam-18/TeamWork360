@@ -4,7 +4,9 @@ A simple and fast project/task management app built with **Vue 3, Pinia, Vue Rou
 
 This project has modular architecture, clean UI components, CRUD operations, and state management.
 
-
+### Project credentials ###
+* email: team@gmail.com
+* password: teamwork360
 
 ##  Tech Stack
 
@@ -91,4 +93,7 @@ mock/
 * Upcoming deadlines
 * Task distribution (Pie chart)
 * Progress bars + clean layout
+
+### Deployed link
+* https://teamwork360.netlify.app/
 
