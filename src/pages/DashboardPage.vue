@@ -2,7 +2,7 @@
 import { useProjectStore } from '@/stores/projectStore'
 import { useTaskStore } from '@/stores/taskStore'
 import { storeToRefs } from 'pinia'
-import { computed, onBeforeMount, ref, watch } from 'vue'
+import { computed, onBeforeMount, onMounted, ref, watch } from 'vue'
 import { Chart, DoughnutController, ArcElement, Tooltip, Legend } from 'chart.js'
 import router from '@/router'
 
@@ -55,6 +55,10 @@ const createChart = () => {
     },
   })
 }
+onMounted(() => {
+  createChart()
+  top3Deadlines.value = getTop3Deadlines()
+})
 watch(tasks, () => {
   createChart()
   top3Deadlines.value = getTop3Deadlines()
