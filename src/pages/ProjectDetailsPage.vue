@@ -50,7 +50,7 @@ const closeProjectModal = async () => {
 </script>
 <template>
   <div class="flex flex-col md:flex-row gap-2 p-8 w-screen md:w-[90vw] min-h-dvh">
-    <div class="top-0 sticky w-[20%]">
+    <div class="top-0 sticky w-full md:w-[30%] lg:w-[20%]">
       <div class="flex flex-col gap-2 md:gap-4">
         <div class="bg-white p-4 border border-[hsl(0,0%,80%)] rounded h-min">
           <div class="flex justify-between items-center">

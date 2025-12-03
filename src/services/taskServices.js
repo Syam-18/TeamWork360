@@ -1,5 +1,9 @@
 import { api } from "./api";
 
+const getAllTasks = () => {
+  return api.get('/tasks')
+}
+
 const getTasks = (projectId) => {
   return api.get(`/tasks?projectId=${projectId}`)
 }
@@ -20,4 +24,4 @@ const deleteTask = (id) => {
   return api.delete(`/tasks/${id}`)
 }
 
-export {getTasks, getTask, addTask, updateTask, deleteTask}
+export {getAllTasks, getTasks, getTask, addTask, updateTask, deleteTask}

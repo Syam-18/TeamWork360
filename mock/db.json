@@ -2,10 +2,10 @@
   "users": [],
   "projects": [
     {
-      "id": "b05d",
       "name": "Team360",
-      "description": "project management",
-      "date": "2025-12-03"
+      "description": "Project management system",
+      "date": "2025-12-03",
+      "id": "b05d"
     },
     {
       "id": "9e36",
@@ -30,7 +30,7 @@
       "title": "Manage no of requests",
       "description": "al;sk",
       "assigne": "Backend ",
-      "priority": "Medium",
+      "priority": "Low",
       "status": "Doing",
       "date": "2025-12-02",
       "id": "18f2"

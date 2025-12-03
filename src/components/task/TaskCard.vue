@@ -4,9 +4,9 @@ import TaskModal from './TaskModal.vue'
 import { updateTask } from '@/services/taskServices'
 
 const statusColor = {
-  Low: 'bg-red-400',
-  Medium: 'bg-red-600',
-  High: 'bg-red-800',
+  "Low": 'bg-[hsl(150,60%,80%)] text-black',
+  "Medium": 'bg-[hsl(50,50%,40%)] text-white',
+  "High": 'bg-[hsl(344,51%,50%)] text-white'
 }
 const props = defineProps(['task', 'projectId', 'removeTask', 'loadTasks'])
 const taskTimeLeft = computed(() => {
@@ -58,10 +58,10 @@ const toggleTask = async () => {
 
     <div class="flex items-center gap-2 md:gap-4">
       <div class="flex lg:flex-row-reverse flex-col items-center gap-1 lg:gap-2">
-        <p :class="`${statusColor[task.priority]}`" class="p-1 py-0 rounded text-white text-xs">
+        <p :class="`${statusColor[task.priority]}`" class="p-1 py-0 rounded text-xs">
           {{ task.priority }}
         </p>
-        <p class="text-xs">
+        <p class="text-xs font-medium">
           {{ task.status }}
         </p>
       </div>
@@ -70,5 +70,5 @@ const toggleTask = async () => {
       </button>
     </div>
   </li>
-  <TaskModal v-if="activeModal" @close-modal="handleClose" @click.stop :task />
+  <TaskModal v-if="activeModal" @close-modal="handleClose" @click.stop :task :projectId="projectId" />
 </template>

@@ -10,7 +10,9 @@ const projectStore = useProjectStore()
 const {projects} = storeToRefs(projectStore)
 const {loadProjects} = projectStore
 onMounted(() => {
-  loadProjects()
+  if(!projects.value.length){
+    loadProjects()
+  }
 })
 
 const activeModal = ref(false)
@@ -28,6 +30,12 @@ const handleClose = () => {
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-4">
       <ProjectCard v-for="project in projects" :key="project.id" :project />
     </div>
+    <h1
+        v-if="!projects.length"
+        class="text-2xl tracking-tighter text-[hsl(0,0%,20%)] font-medium absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2"
+      >
+        No projects created
+      </h1>
   </div>
   <ModalComp v-if="activeModal" @close-modal = 'handleClose'/>
 </template>
