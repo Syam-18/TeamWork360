@@ -102,7 +102,7 @@ const getTop3Deadlines = () => {
     <div class="flex flex-col">
       <h1 class="font-medium text-[hsl(0,0%,20%)] mb-2">Analytics</h1>
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="bg-white p-4 border border-[hsl(0,0%,80%)] rounded flex flex-col items-center">
+        <div class="bg-white p-4 border border-[hsl(0,0%,80%)] rounded flex flex-col items-center col-span-2 md:col-span-1">
           <h1 class="self-start text-sm">Tasks</h1>
           <canvas ref="chartRef"></canvas>
         </div>

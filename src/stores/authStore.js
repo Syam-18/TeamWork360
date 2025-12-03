@@ -1,3 +1,4 @@
+import router from "@/router";
 import { defineStore } from "pinia";
 import { ref } from "vue";
 
@@ -14,6 +15,7 @@ export const useAuthStore = defineStore('auth', () => {
   const logout = () => {
     user.value = null
     localStorage.removeItem('user')
+    router.push('/login')
   }
   window.addEventListener('storage', (event) => {
     if (event.key === 'user' && event.newValue === null) {

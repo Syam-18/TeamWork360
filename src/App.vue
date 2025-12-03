@@ -6,13 +6,9 @@ const auth = useAuthStore()
 </script>
 
 <template>
-  <div class="bg-[hsl(0,0%,95%)] w-screen h-screen max-h-dvh flex flex-col justify-center items-center relative">
-    <NavbarComp />
+  <div class="bg-[hsl(0,0%,95%)] w-screen min-h-dvh flex flex-col justify-center items-center relative py-10 pb-20">
     <RouterView />
-    <button class="border-2 absolute bottom-4 right-4 px-4 p-1 rounded text-sm" @click="auth.logout">
-      Logout
-      <i class="fa-solid fa-power-off ml-1"></i>
-    </button>
+    <NavbarComp />
   </div>
 </template>
 
