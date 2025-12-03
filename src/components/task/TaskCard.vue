@@ -56,8 +56,8 @@ const toggleTask = async () => {
       </div>
     </div>
 
-    <div class="flex items-center gap-2 md:gap-4">
-      <div class="flex lg:flex-row-reverse flex-col items-center gap-1 lg:gap-2">
+    <div class="flex items-center gap-4 md:gap-4">
+      <div class="flex lg:flex-row-reverse flex-col items-center gap-1 md:gap-2 lg:gap-4">
         <p :class="`${statusColor[task.priority]}`" class="p-1 py-0 rounded text-xs">
           {{ task.priority }}
         </p>
@@ -66,7 +66,7 @@ const toggleTask = async () => {
         </p>
       </div>
       <button @click="removeTask(task.id, projectId)" class="p-1 cursor-pointer" @click.stop>
-        <i class="text-sm fa-solid fa-trash"></i>
+        <i class="text-sm fa-solid fa-trash text-[hsl(70,80%,40%)]"></i>
       </button>
     </div>
   </li>

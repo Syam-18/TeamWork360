@@ -49,7 +49,7 @@ const closeProjectModal = async () => {
 }
 </script>
 <template>
-  <div class="flex flex-col md:flex-row gap-2 p-8 w-screen md:w-[90vw] min-h-dvh">
+  <div class="flex flex-col md:flex-row gap-2 p-8 w-screen md:w-[90vw] h-[80vh] overflow-auto">
     <div class="top-0 sticky w-full md:w-[30%] lg:w-[20%]">
       <div class="flex flex-col gap-2 md:gap-4">
         <div class="bg-white p-4 border border-[hsl(0,0%,80%)] rounded h-min">
@@ -59,7 +59,7 @@ const closeProjectModal = async () => {
               <p class="text-gray-600 text-sm">{{ projectTimeLeft }}</p>
             </div>
             <div class="p-2 cursor-pointer" @click="editProject">
-              <i class="fa-solid fa-pen"></i>
+              <i class="fa-solid fa-pen text-[hsl(240,52%,54%)]"></i>
             </div>
           </div>
           <p class="mt-4 text-sm">{{ project.description }}</p>
@@ -86,7 +86,7 @@ const closeProjectModal = async () => {
       </h1>
       <TaskList :tasks="tasks" :projectId="project.id" :removeTask="removeTask" :loadTasks />
       <button
-        class="absolute top-4 right-4 bg-black text-white rounded px-4 p-1 cursor-pointer"
+        class="absolute top-4 right-4 bg-[hsl(240,75%,45%)] text-white rounded px-4 p-1 cursor-pointer"
         @click="createTask"
       >
         Add Task

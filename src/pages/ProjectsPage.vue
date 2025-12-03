@@ -24,7 +24,7 @@ const handleClose = () => {
 }
 </script>
 <template>
-  <div class="w-[90vw] min-h-screen py-8 relative">
+  <div class="w-[85vw] h-[80vh] py-8 relative overscroll-auto">
     <h1 class="text-xl font-medium mb-4">Projects</h1>
     <button @click="createProject" class="absolute right-2 top-8 md:right-8 bg-black text-white px-4 p-1 rounded cursor-pointer">Create</button>
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-4">

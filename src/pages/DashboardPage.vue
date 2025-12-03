@@ -67,16 +67,17 @@ const completedTasksLength = computed(() => {
   return tasks.value.filter((task) => task.status === 'Done').length
 })
 const progressBar = computed(() => {
-  return (completedTasksLength.value * 100) / tasks.value.length + '%'
+  return Math.floor((completedTasksLength.value * 100) / tasks.value.length) + '%'
 })
 const getTop3Deadlines = () => {
-  return [...tasks.value]
-    .sort((a, b) => new Date(a.date) - new Date(b.date)) // ascending by deadline
-    .slice(0, 3) // take first 3
+  console.log(tasks.value)
+  return [...tasks.value].filter((task) => task.status !== "Done")
+    .sort((a, b) => new Date(a.date) - new Date(b.date))
+    .slice(0, 3)
 }
 </script>
 <template>
-  <div class="flex flex-col w-[90vw] h-screen max-h-dvh p-8 overflow-hidden gap-4">
+  <div class="flex flex-col h-[85vh] gap-4 py-10 w-[85vw] overflow-auto">
     <h1 class="text-xl font-medium">Dashboard</h1>
     <div class="flex flex-col">
       <h1 class="font-medium text-[hsl(0,0%,20%)] mb-2">Summary</h1>
