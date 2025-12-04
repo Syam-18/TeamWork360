@@ -9,6 +9,8 @@ import { computed, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 const route = useRoute()
 const project = ref([])
+const Priority = ref('All')
+const Status = ref('All')
 const taskStore = useTaskStore()
 const { loadTasks, removeTask } = taskStore
 const { tasks } = storeToRefs(taskStore)
@@ -24,6 +26,23 @@ const projectTimeLeft = computed(() => {
   if (timeDifferenceInMs < 0) return 'Deadline: ' + project.value.date
   const timeDifferenceInDays = Math.ceil(timeDifferenceInMs / (1000 * 60 * 60 * 24))
   return timeDifferenceInDays + ' days left'
+})
+const filteredTasks = computed(() => {
+  console.log(tasks.value)
+  return tasks.value.filter((task) => {
+    if(Priority.value === 'All' && Status.value === "All"){
+      return true
+    }
+    else if(Priority.value === 'All'){
+      return task.status === Status.value
+    }
+    else if(Status.value === 'All'){
+      return task.priority === Priority.value
+    }
+    else {
+      return task.status === Status.value && task.priority === Priority.value
+    }
+  })
 })
 const activeModal = ref(false)
 const projectModal = ref(false)
@@ -77,14 +96,34 @@ const closeProjectModal = async () => {
         </div>
       </div>
     </div>
-    <div class="bg-white p-4 border border-[hsl(0,0%,80%)] rounded overflow-auto grow-8 relative">
+    <div class="bg-white p-4 border border-[hsl(0,0%,80%)] rounded overflow-auto grow-8 relative flex flex-col">
       <h1
         v-if="!tasks.length"
         class="text-2xl tracking-tighter text-[hsl(0,0%,20%)] font-medium absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2"
       >
         No tasks added
       </h1>
-      <TaskList :tasks="tasks" :projectId="project.id" :removeTask="removeTask" :loadTasks />
+      <div class="flex gap-2">
+        <div class="flex flex-col">
+          <!-- <label class="text-sm hidden md:inline">Priority</label> -->
+          <select v-model="Priority" class="border border-[hsl(0,0%,60%)] md:px-4 p-1 mb-2 text-gray-800 rounded">
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+          <option value="All">All</option>
+        </select>
+        </div>
+        <div class="flex flex-col">
+          <!-- <label class="text-sm hidden md:inline">Status</label> -->
+          <select v-model="Status" class="border border-[hsl(0,0%,60%)] md:px-4 p-1 mb-2 text-gray-800 rounded">
+          <option value="Todo">Todo</option>
+          <option value="Doing">Doing</option>
+          <option value="Done">Done</option>
+          <option value="All">All</option>
+        </select>
+        </div>
+      </div>
+      <TaskList :tasks="filteredTasks" :projectId="project.id" :removeTask="removeTask" :loadTasks />
       <button
         class="absolute top-4 right-4 bg-[hsl(240,75%,45%)] text-white rounded px-4 p-1 cursor-pointer"
         @click="createTask"

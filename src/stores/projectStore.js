@@ -7,6 +7,7 @@ export const useProjectStore = defineStore('projectstore',() => {
   const loadProjects = async () => {
     const response = await getProjects()
     projects.value = response.data
+    console.log(response)
   }
   return {projects, loadProjects}
 })

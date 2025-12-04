@@ -106,6 +106,7 @@ const getTop3Deadlines = () => {
         <div class="col-span-3 flex flex-col gap-4">
           <div
             class="bg-white p-4 border border-[hsl(0,0%,80%)] rounded flex justify-around items-center"
+            title="Overall tasks completion%"
           >
             <div
               class="bg-[hsl(200,2%,89%)] w-[90%] rounded flex items-start"
